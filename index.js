@@ -1,21 +1,24 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
-const port = 3000; 
+const port = 3000;
 
 // Middleware to parse incoming JSON data
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 // Dynamic API endpoint
-app.post('/api', (req, res) => {
+app.post("/api", (req, res) => {
   try {
     // Get the data from the request body
     const data = req.body;
-    
-    
+
     const response = data;
-    
+
     // Return the response in JSON format
     res.json(response);
   } catch (err) {
