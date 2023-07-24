@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+app.get("/test", (req, res) => {
+  res.json({ message: "Hello World!" });
+});
+
 // Dynamic API endpoint
 app.post("/api", (req, res) => {
   try {
